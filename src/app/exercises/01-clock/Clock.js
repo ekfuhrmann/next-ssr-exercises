@@ -1,6 +1,8 @@
-'use client';
-import React from 'react';
-import format from 'date-fns/format';
+"use client";
+import React from "react";
+import format from "date-fns/format";
+
+import Spinner from "../../../components/Spinner";
 
 function Clock() {
   const [time, setTime] = React.useState(new Date());
@@ -16,7 +18,9 @@ function Clock() {
   }, []);
 
   return (
-    <p className="clock">{format(time, 'hh:mm:ss.S a')}</p>
+    <p suppressHydrationWarning className="clock">
+      {format(time, "hh:mm:ss.S a")}
+    </p>
   );
 }
 
